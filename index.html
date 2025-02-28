@@ -19,6 +19,8 @@
             cursor: pointer;
             transition: 0.3s ease-in-out;
             box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
+            display: inline-block;
+            margin-top: 20px;
         }
         .button:hover {
             background-color: darkblue;
@@ -28,7 +30,7 @@
 </head>
 
 <body>
-    <div class="container-video" id="container-video">
+    <div class="container-video" id="container-video" style="display: none;">
         <video class="video" id="video" muted loop>
             <source src="vid/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
@@ -48,6 +50,28 @@
     </div>
 </body>
 
-<script src="main.js"></script>
+<script>
+    function showVideo() {
+        let video = document.getElementById("video");
+        let container = document.getElementById("container-video");
+        let button = document.getElementById("button");
+        
+        container.style.display = "block"; // Show video container
+        video.play(); // Play the video
+        
+        // Attempt to enable fullscreen mode
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) { 
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) { 
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { 
+            video.msRequestFullscreen();
+        }
+        
+        button.style.display = "none"; // Hide the button after click
+    }
+</script>
 
 </html>
