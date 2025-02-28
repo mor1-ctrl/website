@@ -69,16 +69,18 @@ h2 {
 }
 
 .button {
-    width: 28px;
-    height: 28px;
-    border-width: 2px;
-    border-style: solid;
-    border-color: #b2b2b2;
-    border-radius: 4px;
-    background-color: rgb(255, 255, 255);
-    top: 0px;
-    left: 0px;
+    background-color: blue;
+    color: white;
+    font-size: 20px;
+    padding: 15px 30px;
+    border: none;
+    border-radius: 8px;
     cursor: pointer;
+    transition: 0.3s;
+}
+
+.button:hover {
+    background-color: darkblue;
 }
 
 .text-container {
