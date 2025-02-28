@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Totally Normal Website</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 50px;
+        }
+        #trigger {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 18px;
+            background-color: blue;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        #jumpscare {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100vw;
+            height: 100vh;
+            background: black;
+            justify-content: center;
+            align-items: center;
+            z-index: 9999;
+        }
+        #jumpscare img {
+            width: 100vw;
+            height: 100vh;
+            object-fit: cover;
+        }
+    </style>
+</head>
+<body>
+    <h1>Welcome to My Website</h1>
+    <p>Click the button below to see something cool!</p>
+    <button id="trigger">Click Me</button>
+    
+    <div id="jumpscare">
+        <img src="https://i.imgur.com/HtzNwye.jpg" alt="Scary Face">
+        <audio id="scream" src="https://www.myinstants.com/media/sounds/wilhelm_scream.mp3"></audio>
+    </div>
+
+    <script>
+        document.getElementById("trigger").addEventListener("click", function() {
+            // Request fullscreen
+            let elem = document.documentElement;
+            if (elem.requestFullscreen) {
+                elem.requestFullscreen();
+            } else if (elem.mozRequestFullScreen) {
+                elem.mozRequestFullScreen();
+            } else if (elem.webkitRequestFullscreen) {
+                elem.webkitRequestFullscreen();
+            } else if (elem.msRequestFullscreen) {
+                elem.msRequestFullscreen();
+            }
+
+            // Display jumpscare after fullscreen is activated
+            setTimeout(() => {
+                document.getElementById("jumpscare").style.display = "flex";
+                document.getElementById("scream").play();
+            }, 1000);
+        });
+    </script>
+</body>
+</html>
