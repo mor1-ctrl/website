@@ -60,13 +60,7 @@ h2 {
     margin-bottom: 20px;
 }
 
-.button-container {
-    display: flex;
-    justify-content: left;
-    align-items: center;
-    padding-left: 15px;
-    padding-right: 15px;
-}
+
 
 .button {
     background-color: blue;
