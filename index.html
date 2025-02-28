@@ -17,10 +17,12 @@
             border: none;
             border-radius: 8px;
             cursor: pointer;
-            transition: 0.3s;
+            transition: 0.3s ease-in-out;
+            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
         }
         .button:hover {
             background-color: darkblue;
+            transform: scale(1.05);
         }
     </style>
 </head>
@@ -46,20 +48,6 @@
     </div>
 </body>
 
-<script>
-    function showVideo() {
-        let video = document.getElementById("video");
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { 
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { 
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { 
-            video.msRequestFullscreen();
-        }
-        video.play();
-    }
-</script>
+<script src="main.js"></script>
 
 </html>
