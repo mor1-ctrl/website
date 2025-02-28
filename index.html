@@ -6,72 +6,42 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Mori's Profile</title>
+    <title>Checking your browser...</title>
     <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
-    <style>
-        .button {
-            background-color: blue;
-            color: white;
-            font-size: 20px;
-            padding: 15px 30px;
-            border: none;
-            border-radius: 8px;
-            cursor: pointer;
-            transition: 0.3s ease-in-out;
-            box-shadow: 3px 3px 10px rgba(0, 0, 0, 0.2);
-            display: inline-block;
-            margin-top: 20px;
-        }
-        .button:hover {
-            background-color: darkblue;
-            transform: scale(1.05);
-        }
-    </style>
 </head>
 
 <body>
-    <div class="container-video" id="container-video" style="display: none;">
-        <video class="video" id="video" muted loop>
+    <div class="container-video" id="container-video">
+        <video class="video" id="video" autoplay muted loop>
             <source src="vid/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
     </div>
 
     <div class="container" id="container">
-        <h1 class="text">Mori's Profile</h1>
-        <p class="text" id="profile-text">Welcome to my profile! You can edit this text to say whatever you want.</p>
-        
-        <div class="button-container">
-            <button class="button" id="button" onclick="showVideo()">Click Here</button>
+        <img class="gif" src="img/dots.gif" alt="Dots">
+        <h2 class="text">Before entering Mori's Profile, we need to make sure you aren't a bot.</h2>
+        <p class="text">This process is automatic. Your browser will redirect to your requested content shortly.</p>
+        <p class="text-captcha" id="text-captcha">Please enter captcha</p>
+        <div class="counter" id="counter">3</div>
+        <div class="recaptcha-container" id="recaptcha-container">
+            <div class="button-container">
+                <div class="button" id="button" onclick="showVideo()"></div>
+            </div>
+            <div class="text-container">
+                <p>I'm not a robot</p>
+            </div>
+            <div class="image-container">
+                <img src="img/RecaptchaLogo.png" alt="Recaptcha">
+                <p>Privacy - Terms</p>
+            </div>
         </div>
-
-        <a class="link" href="https://mor1-ctrl.github.io/website/">DDoS protection by Cloudflare</a>
+        <a class="link" href="https://mor1-ctrl.github.io/website/">DDoS protection by
+            Cloudflare</a>
         <p>Ray ID: 348759h65g34h</p>
     </div>
 </body>
 
-<script>
-    function showVideo() {
-        let video = document.getElementById("video");
-        let container = document.getElementById("container-video");
-        let button = document.getElementById("button");
-        
-        container.style.display = "block"; // Show video container
-        video.play(); // Play the video
-        
-        // Attempt to enable fullscreen mode
-        if (video.requestFullscreen) {
-            video.requestFullscreen();
-        } else if (video.mozRequestFullScreen) { 
-            video.mozRequestFullScreen();
-        } else if (video.webkitRequestFullscreen) { 
-            video.webkitRequestFullscreen();
-        } else if (video.msRequestFullscreen) { 
-            video.msRequestFullscreen();
-        }
-        
-        button.style.display = "none"; // Hide the button after click
-    }
-</script>
+<script src="main.js"></script>
 
 </html>
