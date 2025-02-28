@@ -6,13 +6,28 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="style.css">
-    <title>Checking your browser...</title>
+    <title>Mori's Profile</title>
     <link rel="shortcut icon" href="img/Favicon.ico" type="image/x-icon">
+    <style>
+        .button {
+            background-color: blue;
+            color: white;
+            font-size: 20px;
+            padding: 15px 30px;
+            border: none;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.3s;
+        }
+        .button:hover {
+            background-color: darkblue;
+        }
+    </style>
 </head>
 
 <body>
     <div class="container-video" id="container-video">
-        <video class="video" id="video" autoplay muted loop>
+        <video class="video" id="video" muted loop>
             <source src="vid/video.mp4" type="video/mp4" />
             Your browser does not support the video tag.
         </video>
@@ -29,7 +44,22 @@
         <a class="link" href="https://mor1-ctrl.github.io/website/">DDoS protection by Cloudflare</a>
         <p>Ray ID: 348759h65g34h</p>
     </div>
+</body>
 
-<script src="main.js"></script>
+<script>
+    function showVideo() {
+        let video = document.getElementById("video");
+        if (video.requestFullscreen) {
+            video.requestFullscreen();
+        } else if (video.mozRequestFullScreen) { 
+            video.mozRequestFullScreen();
+        } else if (video.webkitRequestFullscreen) { 
+            video.webkitRequestFullscreen();
+        } else if (video.msRequestFullscreen) { 
+            video.msRequestFullscreen();
+        }
+        video.play();
+    }
+</script>
 
 </html>
